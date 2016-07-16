@@ -1,0 +1,36 @@
+package com.stock.tests;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
+import org.apache.poi.xssf.usermodel.XSSFCell;
+import org.apache.poi.xssf.usermodel.XSSFRow;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
+public class stockacctountingFL {
+
+
+	public static void main(String[] args) throws IOException
+	{
+		String uompath="D:\\Sans\\stock\\src\\com\\stock\\testdata\\UOM_id.xlsx";
+		FileInputStream fis=new FileInputStream(uompath);
+		
+		XSSFWorkbook WB=new XSSFWorkbook(fis);
+		XSSFSheet WS=WB.getSheet("UOM");
+		XSSFRow WR=WS.getRow(1);
+		XSSFCell WC=WR.getCell(0);
+		
+		String uid=WC.getStringCellValue();
+		System.out.println(uid);
+		
+		
+		
+		 
+	
+		
+
+	}
+
+}
